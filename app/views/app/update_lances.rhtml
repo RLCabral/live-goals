@@ -1,0 +1,62 @@
+		<div style="color:#000; padding-bottom:2px">
+			<div style="float:left; width:152px; height:18px; padding-right:5px; text-align:right">		
+				<%= @equipa1 %>
+			</div>
+			<div style="float:left; margin: 0px 5px 0px 0px; width:20px; height:18px">
+				<b><%= @golos1 %></b>
+			</div>
+			<div style="float:left; margin: 0px 5px 0px 0px; width:20px; height:18px">
+				x
+			</div>
+			<div style="float:left;width:20px; height:18px">
+				<b><%= @golos2 %></b>
+			</div>
+			<div style="float:left; margin: 0px 5px 0px 0px; padding-left:5px; width:152px; height:18px; text-align:left">
+				<%= @equipa2 %>
+			</div>
+		</div>
+	<div>
+		<br />
+	</div>
+
+	<div style="overflow:auto; height:100px">
+	<% @arr_size.times { |i|
+		#puts @arr_size
+		puts @min[i]
+		puts @desc[i]
+		puts @lance_tipo[i]
+		if @lance_tipo[i] == "Vídeo"
+			@url = @desc[i]
+		
+				%>
+		<%= "<div style=\"background:url(../images/bg_time.gif); float:left; width:28px; height:18px; text-align:center;\"><div style='color:#ffdb15; font-size:13px; font-weight:bold'>" + @min[i] + "</div></div> <div style=\"background:url(../images/bg_lance.gif) ;height:13px;text-align:left;font-size:11px; margin:0px 0px 5px 28px; padding:0px 0px 5px 10px;\"> <img src='../images/vd_icon.gif' style='vertical-align:top' /> " %>
+	<%=		link_to_remote( "<b style='color:#ffdf64'>Vídeo</b>",
+			:update => "video",
+			:url => { :controller => "app", :action => "embed_video", :var => @url },
+			:html => { :rel  => "Clique aqui para carregar o vídeo ao lado" } ) + "</div>" %>
+		<% end
+
+		if @lance_tipo[i] == "Lance normal" %>
+		<%= "<div style=\"background:url(../images/bg_time.gif); float:left; width:28px; height:18px; text-align:center;\"><div style='color:#ffdb15; font-size:13px; font-weight:bold'>" + @min[i] + "</div></div> <div style=\"background:url(../images/bg_lance.gif) ;height:13px;text-align:left;font-size:11px; margin:0px 0px 5px 28px; padding:0px 0px 5px 10px;\"> " + @desc[i] + "</div>" %>
+		<%
+		end
+
+		if @lance_tipo[i] == "Cartão Amarelo" %>
+		<%= "<div style=\"background:url(../images/bg_time.gif); float:left; width:28px; height:18px; text-align:center;\"><div style='color:#ffdb15; font-size:13px; font-weight:bold'>" + @min[i] + "</div></div> <div style=\"background:url(../images/bg_lance.gif);height:13px;text-align:left;font-size:11px; margin:0px 0px 5px 28px; padding:0px 0px 5px 10px;\"> <img src='../images/ca_icon.gif' style='vertical-align:top' /> " + @desc[i] + "</div>" %>
+		<%
+		end
+
+		if @lance_tipo[i] == "Cartão Vermelho" %>
+		<%= "<div style=\"background:url(../images/bg_time.gif); float:left; width:28px; height:18px; text-align:center;\"><div style='color:#ffdb15; font-size:13px; font-weight:bold'>" + @min[i] + "</div></div> <div style=\"background:url(../images/bg_lance.gif);height:13px;text-align:left;font-size:11px; margin:0px 0px 5px 28px; padding:0px 0px 5px 10px;\"> <img src='../images/cv_icon.gif' style='vertical-align:top' /> " + @desc[i] + "</div>" %>
+		<%
+		end
+
+		if @lance_tipo[i] == "Golo" %>
+		<%= "<div style=\"background:url(../images/bg_time.gif); float:left; width:28px; height:18px; text-align:center;\"><div style='color:#ffdb15; font-size:13px; font-weight:bold'>" + @min[i] + "</div></div> <div style=\"background:url(../images/bg_lance.gif);height:13px;text-align:left;font-size:11px; margin:0px 0px 5px 28px; padding:0px 0px 5px 10px;\"> <img src='../images/gl_icon.gif' style='vertical-align:top' /> " + @desc[i] + "</div>" %>
+		<%
+		end
+
+	} %>
+
+	</div>
+</div>

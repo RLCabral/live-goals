@@ -1,0 +1,17 @@
+== Welcome to Live Goals
+
+Live Goals is an application, written in Ruby on Rails, that shows the live soccer games.
+
+It is a university project developed to the Multimedia I in the Computer Engeneering course. The main idea was create a multimedia application, but the result was a db oriented application.
+
+Despite the name, Live Goals, this application needs a person to introduce the data about the active games. Would be great if the newspaper make available some APIs or even a feed to be used by the other system. But they seem to don't work that way.
+
+The only "live" data in the application is the news provided by Google News.
+
+Actually, this application looks very similar to any other live score website already available. Even the videos are linked to sapo.pt.
+
+Maybe in the future, hoping that the newspapers provide an API, it can become a real live application with all data coming from other sites. It would be a nice start to make it work automaticaly and the players/teams stats being updated after the game.
+
+Feel free to use, modify and play around. Just don't forget to put the author's name ;)
+
+Ricardo Cabral (ricardolcabral@gmail.com)

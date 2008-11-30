@@ -1,0 +1,82 @@
+
+
+h2 	
+{ 
+	color: #999;
+	margin-bottom: 0; 
+	margin-left:13px;
+	background:url(navigation.jpg) no-repeat;
+	height:40px;
+}
+
+h2 span
+{
+	display: none;
+}
+
+p	
+{ 
+	color: #ffff66; 
+	margin-top: .5em;
+	font-size: .75em;
+	padding-left:15px;	
+}
+
+#navigation-block {
+	position:relative;
+	top:0px;
+	left:0px;
+}
+
+#hide {
+	position:absolute;
+	top:30px;
+	left:-190px;
+}
+
+ul#sliding-navigation
+{
+	list-style: none;
+	font-size: 1em;
+	margin: 0px 0;
+	padding: 0;
+
+}
+
+ul#sliding-navigation li.sliding-element h3
+{
+	display: block;
+	font-size: .65em;
+	width: 172px;
+	padding: 0px 18px;
+	margin: 0;
+	margin-bottom: 2px;
+}
+
+ul#sliding-navigation li.sliding-element a
+{
+	display: block;
+	font-size: .80em;
+	width: 170px;
+	padding: 2px 18px;
+	margin: 0;
+	margin-bottom: 2px;
+}
+
+ul#sliding-navigation li.sliding-element h3
+{
+	color: #fff;
+	background:#333 url(../images/heading_bg.jpg) repeat-y;
+	font-weight: normal;
+}
+
+ul#sliding-navigation li.sliding-element a
+{
+	color: #999;
+	background:#222 url(../images/tab_bg.jpg) repeat-y;
+	border: 1px solid #1a1a1a;
+	text-decoration: none;
+
+}
+
+ul#sliding-navigation li.sliding-element a:hover { color: #ffc600; }

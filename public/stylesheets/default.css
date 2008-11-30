@@ -1,0 +1,221 @@
+﻿A, BODY, FORM, H1, H2, H3, LI, P, PRE, SPAN, UL {
+	margin: 0px;
+	padding: 0px;
+}
+BODY {
+	background:#1a1a1a url(../images/bg_body.gif) repeat-x top center;
+	background-color: #1a1a1a;
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: center;
+}
+
+INPUT, SELECT {
+	font-size: 12px;
+}
+
+PRE {
+	font-size: 12px;
+	margin-top: 5px;
+}
+
+a{
+	color:#383838;
+	font-family:Calibri,Verdana, Arial, Helvetica, sans-serif;
+	font-size:13px;
+	text-decoration:none;
+	
+}
+
+a:hover{
+	color:#ffc600;
+	font-family:Calibri,Verdana, Arial, Helvetica, sans-serif;
+	font-size:13px;
+	text-decoration:none;
+	
+}
+
+#video_link{
+	color:#ffdf64;
+}
+
+#body {
+/*	background: white;*/
+	border: 6px solid #838383;
+	width: 900px;
+	margin: 0 auto;
+	margin-top:5px;
+}
+
+#head {
+	height: 125px;
+	border-left:1px #dbdbdb solid;
+	border-right:1px #dbdbdb solid;
+	border-top:1px #dbdbdb solid;
+	background:url(../images/header.jpg) top no-repeat;
+}
+#head H1 {
+	color: #444444;
+	font-size: 40px;
+}
+
+.box_head{
+	padding-left:0%;
+	margin-left:auto:
+	margin-right:auto;
+	width:55px;
+	color:#e4e4e4;
+	font-size: 12px;
+}
+
+.box_title{
+	width:150px;
+	text-align:left;
+	padding-left:3px;
+	/*background:#333 url(../images/heading_bg.jpg) repeat-y;*/
+}
+
+.box_title a{
+	color:black;
+	/*background:#333 url(../images/heading_bg.jpg) repeat-y;*/
+}
+
+.box_title a:hover{
+	color:#ffc600;
+	/*background:#333 url(../images/heading_bg.jpg) repeat-y;*/
+}
+
+
+.list {
+	background:#d1d1d1;
+	filter:alpha(opacity=2);
+	opacity: 0.2;
+	padding: 3px;
+	margin: 3px;
+}
+
+.list:hover {
+	background:#000;
+	filter:alpha(opacity=7);
+	opacity: 0.7;
+	padding: 3px;
+	margin:3px
+}
+
+a.list {
+	display:block;
+}
+
+.list_news {
+	background:#d1d1d1;
+	color:black;
+	filter:alpha(opacity=2);
+	border-top:2px solid #000;
+	opacity: 0.2;
+	margin-bottom:8px;
+	padding: 0px 0px 0px 3px;
+}
+
+.list_news:hover {
+	background:#000;
+	color:#ffc600;
+	filter:alpha(opacity=7);
+	opacity: 0.7;
+	margin-bottom:8px;
+	padding: 0px 0px 0px 3px;
+}
+
+.second_list {
+	font-size:8pt;
+	width:200px;
+	color:black;
+	padding: 3px;
+	margin:3px
+}
+
+.second_list:hover{
+	font-size:8pt;
+	width:200px;
+	color:#ffc600;
+	padding: 3px;
+	margin:3px
+}
+
+a.second_list {
+	display:block;
+}
+
+#third_list {
+	font-size:8pt;
+	width:200px;
+	color:black;
+	padding: 3px;
+	margin:3px
+}
+
+#menu{
+	padding: 0px;
+	text-align:left;
+	float:right;
+	margin-right: 15px;
+	margin-top:5px;
+	height:20px;
+	width: 210px;
+}
+
+#menu a{
+	/*background:url(../images/bg_jg_enc.gif) repeat-x;*/
+	padding: 2px;
+	color:#000;
+	background:#dcdcdc;
+	border:1px #a0a0a0 solid;
+}
+
+#news{
+	background:url(../images/bg_jg_enc.gif) repeat-x;
+	height:20px;
+	border-left:1px #dbdbdb solid;
+	border-top:1px #a1a1a1 solid;
+	border-right:1px #dbdbdb solid;
+}
+
+
+#content {
+	background:#3c3c3c url(../images/bg_content.gif) repeat-x top;
+	min-height: 250px;
+	padding-bottom: 10px;
+	padding-top: 10px;
+	border-top:none;
+	border-left:1px #dbdbdb solid;
+	border-right:1px #dbdbdb solid;
+	}
+
+#left {
+	min-height: 250px;
+/*	background: #FFFFFF;*/
+}
+
+
+#foot {
+	padding-top: 10px;
+	padding-bottom: 5px;
+	color: #aaaaaa;
+	font-size: 10px;
+	border-left:1px #dbdbdb solid;
+	border-bottom:1px #dbdbdb solid;
+	border-right:1px #dbdbdb solid;
+	background:url(../images/bg_foot.gif) repeat-x top;
+	}
+
+.style1 {
+		border-style: none;
+		border-width: medium;
+	}
+	
+	
+.b1, .b2, .b3, .b4{font-size:1px; overflow:hidden; display:block;}
+.b1 {height:1px; background:#888; margin:0 5px;}
+.b2 {height:1px; background:#ddd; border-right:2px solid #888; border-left:2px solid #888; margin:0 3px;}
+.b3 {height:1px; background:#ddd; border-right:1px solid #888; border-left:1px solid #888; margin:0 2px;}
+.b4 {height:2px; background:#ddd; border-right:1px solid #888; border-left:1px solid #888; margin:0 1px;}
+.contentb {background: #ddd; border-right:1px solid #888; border-left:1px solid #888;}
+.contentb div {margin-left: 0px;font-family:Calibri,Verdana, Arial, Helvetica, sans-serif; font-size:13px}	

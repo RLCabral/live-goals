@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" >
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+	<meta name="author" content="" />
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<meta name="robots" content="all" />
+	<title></title>
+</head>
+<body>
+
+<%= form_tag :action => "criar_game" %>
+
+<label>Equipa 1:</label> <%= text_field_tag("equipa1", "") %><br />
+<label>Equipa 2:</label> <%= text_field_tag("equipa2", "") %><br />
+<label>Data:</label> <%= text_field_tag("data", "") %> (formato: Ano-Mês-Dia)<br />
+<label>Hora:</label> <%= text_field_tag("hora", "") %> (formato: Hora(24h):Minuto)<br />
+
+<%= submit_tag "Criar" %>
+
+</body>
+</html>
+
+

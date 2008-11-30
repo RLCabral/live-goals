@@ -1,0 +1,264 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+
+<title></title>
+
+<link rel="stylesheet" type="text/css" href="/stylesheets/prototip.css">
+<link rel="stylesheet" type="text/css" href="/stylesheets/default.css">
+
+<%= javascript_include_tag 'prototype' %>
+<%= javascript_include_tag 'prototip' %>
+</head>
+
+<body style="">
+
+<script type=”text/javascript”>
+
+check = true;
+
+</script>
+
+
+<script type="text/javascript" language="javascript">
+
+document.observe('dom:loaded', function(){
+  $$('a[rel]').each(function(element){
+    new Tip(element, element.rel);
+  });
+});
+</script>
+
+<div style="float:left; width:15px; height:135px; background:url(../images/barra_lances.gif) repeat-x;">
+				
+</div>
+<div style="float:left; width:400px; height:135px; margin-right:5px">
+	<div class="box_head">		<div class="box_title"><img src="images/t_lances.png" /></div>
+	</div>
+	<div id="jogo_detalhes" style="height:115px; font-size:10pt">
+		<div style="color:#000; padding-bottom:2px">
+			<div style="float:left; width:152px; height:18px; padding-right:5px; text-align:right">		
+				<%= @equipa1 %>
+			</div>
+			<div style="float:left; margin: 0px 5px 0px 0px; width:20px; height:18px">
+				<b><%= @golos1 %></b>
+			</div>
+			<div style="float:left; margin: 0px 5px 0px 0px; width:20px; height:18px">
+				x
+			</div>
+			<div style="float:left;width:20px; height:18px">
+				<b><%= @golos2 %></b>
+			</div>
+			<div style="float:left; margin: 0px 5px 0px 0px; padding-left:5px; width:152px; height:18px; text-align:left">
+				<%= @equipa2 %>
+			</div>
+		</div>
+	<div>
+		<br />
+	</div>
+
+	<div style="overflow:auto; height:100px">
+	<% @arr_size.times { |i|
+		#puts @arr_size
+		puts @min[i]
+		puts @desc[i]
+		puts @lance_tipo[i]
+		if @lance_tipo[i] == "Vídeo"
+			@url = @desc[i]
+		
+				%>
+		<%= "<div style=\"background:url(../images/bg_time.gif); float:left; width:28px; height:18px; text-align:center;\"><div style='color:#ffdb15; font-size:13px; font-weight:bold'>" + @min[i] + "</div></div> <div style=\"background:url(../images/bg_lance.gif) ;height:13px;text-align:left;font-size:11px; margin:0px 0px 5px 28px; padding:0px 0px 5px 10px;\"> <img src='../images/vd_icon.gif' style='vertical-align:top' /> " %>
+	<%=		link_to_remote( "<b style='color:#ffdf64'>Vídeo</b>",
+			:update => "video",
+			:url => { :controller => "app", :action => "embed_video", :var => @url },
+			:html => { :rel  => "Clique aqui para carregar o vídeo ao lado" } ) + "</div>" %>
+		<% end
+
+		if @lance_tipo[i] == "Lance normal" %>
+		<%= "<div style=\"background:url(../images/bg_time.gif); float:left; width:28px; height:18px; text-align:center;\"><div style='color:#ffdb15; font-size:13px; font-weight:bold'>" + @min[i] + "</div></div> <div style=\"background:url(../images/bg_lance.gif) ;height:13px;text-align:left;font-size:11px; margin:0px 0px 5px 28px; padding:0px 0px 5px 10px;\"> " + @desc[i] + "</div>" %>
+		<%
+		end
+
+		if @lance_tipo[i] == "Cartão Amarelo" %>
+		<%= "<div style=\"background:url(../images/bg_time.gif); float:left; width:28px; height:18px; text-align:center;\"><div style='color:#ffdb15; font-size:13px; font-weight:bold'>" + @min[i] + "</div></div> <div style=\"background:url(../images/bg_lance.gif) ;height:13px;text-align:left;font-size:11px; margin:0px 0px 5px 28px; padding:0px 0px 5px 10px;\"> <img src='../images/ca_icon.gif' style='vertical-align:top' /> " + @desc[i] + "</div>" %>
+		<%
+		end
+
+		if @lance_tipo[i] == "Cartão Vermelho" %>
+		<%= "<div style=\"background:url(../images/bg_time.gif); float:left; width:28px; height:18px; text-align:center;\"><div style='color:#ffdb15; font-size:13px; font-weight:bold'>" + @min[i] + "</div></div> <div style=\"background:url(../images/bg_lance.gif) ;height:13px;text-align:left;font-size:11px; margin:0px 0px 5px 28px; padding:0px 0px 5px 10px;\"> <img src='../images/cv_icon.gif' style='vertical-align:top' /> " + @desc[i] + "</div>" %>
+		<%
+		end
+
+		if @lance_tipo[i] == "Golo" %>
+		<%= "<div style=\"background:url(../images/bg_time.gif); float:left; width:28px; height:18px; text-align:center;\"><div style='color:#ffdb15; font-size:13px; font-weight:bold'>" + @min[i] + "</div></div> <div style=\"background:url(../images/bg_lance.gif) ;height:13px;text-align:left;font-size:11px; margin:0px 0px 5px 28px; padding:0px 0px 5px 10px;\"> <img src='../images/gl_icon.gif' style='vertical-align:top' /> " + @desc[i] + "</div>" %>
+		<%
+		end
+
+	} %>
+
+	</div>
+</div>
+
+			</div>
+			<div style="float:left; width:5px; height:135px; background: url(../images/barra_ult_jgs.gif) no-repeat top right">
+				
+			</div>
+			<div style="float:left; width:200px; height:135px">
+				<div class="box_head" style="padding-left:0%">
+					<div class="box_title"><img src="images/t_ult_res.png" /></div>
+				</div>
+				<%= "<div style='text-align:left; padding-left:5px; font-size:8pt; font-weight:bold'>" + @lst_e1 + "</div>" %>
+
+				<div style="height:34px; font-size:10pt; padding-left:5px">
+					<% for tab_vid in @ult_jogos1 %>
+					<% mes = tab_vid.data.to_s %>
+					<% mes = mes.slice(5,2) %>
+
+					<%	if mes == "01" %>
+					<%	 	mes = "Jan" %>
+					<% end %>
+					<%	if mes == "02" %>
+					<% 		mes = "Fev" %>
+					<% end %>
+					<%	if mes == "03" %>
+					<% 		mes = "Mar" %>
+					<% end %>
+					<%	if mes == "04" %>
+					<% 		mes = "Abr" %>
+					<% end %>
+					<%	if mes == "05" %>
+					<% 		mes = "Mai" %>
+					<% end %>
+					<%	if mes == "06" %>
+					<% 		mes = "Jun" %>
+					<% end %>
+					<%	if mes == "07" %>
+					<% 		mes = "Jul" %>
+					<% end %>
+					<%	if mes == "08" %>
+					<% 		mes = "Ago" %>
+					<% end %>
+					<%	if mes == "09" %>
+					<% 		mes = "Set" %>
+					<% end %>
+					<%	if mes == "10" %>
+					<% 		mes = "Out" %>
+					<% end %>
+					<%	if mes == "11" %>
+					<% 		mes = "Nov" %>
+					<% end %>
+					<%	if mes == "12" %>
+					<% 		mes = "Dez" %>
+					<% end %>
+
+					<% dia = tab_vid.data.to_s %>
+					<% dia = dia.slice(8,2) %>
+
+					<%= "<div style='float:left; text-align:left; width:40px; padding-left:3px; font-size:8pt'>" + dia + " " + mes + "</div>" %>
+					<%= link_texto1 = "<div style='padding-left:3px; font-size:8pt'><div style='float:left; width:50px; padding-right:5px; margin-left:5px; text-align:right'>" + tab_vid.equipa1.to_s + "</div> <div style='float:left; margin: 0px 2px 0px 2px; width:30px'>" + tab_vid.golos1.to_s + " x " + tab_vid.golos2.to_s + "</div> <div style='float:left; padding-left:5px; width:50px; text-align:left'>" + tab_vid.equipa2.to_s + "</div> </div>" %>
+<br />
+
+
+
+					<% end %>
+
+					<% if link_texto1.nil? %>
+					<% tst = "<div class=''><font style='font-size:11px;padding-bottom:0px'>Não há jogos</font></div>" %>
+					<%= tst %>
+					<% end %>
+				</div>
+
+
+
+				<%= "<div style='text-align:left; padding-left:5px; font-size:8pt; font-weight:bold'>" + @lst_e2 + "</div>" %>
+
+				<div style="height:34px; font-size:10pt; padding-left:5px">
+					<% for tab_vid in @ult_jogos2 %>
+					<% mes = tab_vid.data.to_s %>
+					<% mes = mes.slice(5,2) %>
+
+					<%	if mes == "01" %>
+					<%	 	mes = "Jan" %>
+					<% end %>
+					<%	if mes == "02" %>
+					<% 		mes = "Fev" %>
+					<% end %>
+					<%	if mes == "03" %>
+					<% 		mes = "Mar" %>
+					<% end %>
+					<%	if mes == "04" %>
+					<% 		mes = "Abr" %>
+					<% end %>
+					<%	if mes == "05" %>
+					<% 		mes = "Mai" %>
+					<% end %>
+					<%	if mes == "06" %>
+					<% 		mes = "Jun" %>
+					<% end %>
+					<%	if mes == "07" %>
+					<% 		mes = "Jul" %>
+					<% end %>
+					<%	if mes == "08" %>
+					<% 		mes = "Ago" %>
+					<% end %>
+					<%	if mes == "09" %>
+					<% 		mes = "Set" %>
+					<% end %>
+					<%	if mes == "10" %>
+					<% 		mes = "Out" %>
+					<% end %>
+					<%	if mes == "11" %>
+					<% 		mes = "Nov" %>
+					<% end %>
+					<%	if mes == "12" %>
+					<% 		mes = "Dez" %>
+					<% end %>
+
+					<% dia = tab_vid.data.to_s %>
+					<% dia = dia.slice(8,2) %>
+
+					<%= "<div style='float:left; text-align:left; width:40px; padding-left:3px; font-size:8pt'>" + dia + " " + mes + "</div>" %>
+					<%= link_texto2 = "<div style='padding-left:3px; font-size:8pt'><div style='float:left; width:50px; padding-right:5px; margin-left:5px; text-align:right'>" + tab_vid.equipa1.to_s + "</div> <div style='float:left; margin: 0px 2px 0px 2px; width:30px'>" + tab_vid.golos1.to_s + " x " + tab_vid.golos2.to_s + "</div> <div style='float:left; padding-left:5px; width:50px; text-align:left'>" + tab_vid.equipa2.to_s + "</div> </div>" %>
+
+
+
+					<% end %>
+
+					<% if link_texto2.nil? %>
+					<% tst = "<div class=''><font style='font-size:11px;padding-bottom:0px'>Não há jogos</font></div>" %>
+					<%= tst %>
+					<% end %>
+				</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			</div>
+
+            <script type="text/javascript" language="javascript">
+
+			new Tip('tip1', 'Clique aqui para abrir o vídeo ao lado');
+			
+            </script>
+</body>
+
+</html>

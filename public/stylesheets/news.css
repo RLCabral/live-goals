@@ -1,0 +1,74 @@
+#wrapp {
+	width: 760px;
+	text-align: left;
+	margin: 0 auto;
+	padding: 0;
+	color: black;
+}
+#wrapp h1 {
+	font: bold;
+	margin: 1.2em 0 0.5em 0;
+	padding: 0;
+}
+
+#wrapp p {
+	font: normal;
+	margin: 1em 0;
+	padding: 0;
+}
+
+#wrapp h2 {
+	font: bold;
+}
+
+.tickercontainer {
+	width: 750px; 
+	height: 27px; 
+	margin: 0px 0px 0px 0px; 
+	padding: 0
+	overflow: hidden; 
+}
+
+.tickercontainer .mask { 
+	position: relative;
+	left: 10px;
+	top: 1px;
+	width: 750px;
+	overflow: hidden;
+}
+
+ul.newsticker {
+	position: relative;
+	left: 750px;
+	font: bold;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+ul.newsticker li {
+	float: left;
+	margin: 0;
+	padding: 0;
+}
+
+ul.newsticker a {
+	white-space: nowrap;
+	padding: 0;
+	color: #da0000;
+	font: bold;
+	font-size: 10px;
+	margin: 0 30px 0 0;
+}
+
+ul.newsticker a:hover {
+	white-space: nowrap;
+	padding: 0;
+	color:white;
+	font: bold;
+	margin: 0 30px 0 0;
+} 
+
+ul.newsticker span {
+	margin: 0 10px 0 0;
+}
